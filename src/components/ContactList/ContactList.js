@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './ContactList.module.scss';
 import { connect } from 'react-redux';
-import { contactsOperations, contactsSelectors } from '../../redux';
+import { contactsOperations, contactsSelectors } from '../../redux/contacts';
 
 const ContactList = ({ contacts, onDeleteContacts }) => {
   return (
