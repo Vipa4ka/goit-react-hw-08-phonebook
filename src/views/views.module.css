@@ -1,0 +1,59 @@
+.HomeViewContainer {
+  min-height: 700px;
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+  flex-direction: column;
+  background: #d7d5d1 url('./foto.jpg') top no-repeat;
+  background-size: 1000px 700px;
+}
+
+.HomeViewTitleP {
+  margin: 0;
+  margin-top: 100px;
+  font-size: 54px;
+  letter-spacing: 10px;
+  color: #fff;
+  font-family: 'Kaushan Script', cursive;
+}
+
+.HomeViewTitleH {
+  margin: 0;
+  margin-top: 90px;
+  text-transform: uppercase;
+  font-size: 72px;
+  letter-spacing: 20px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.viewForm {
+  margin: 105px auto 60px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 420px;
+  border-color: #838078;
+  border-radius: 5px;
+}
+
+.viewLabel {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.viewContainer {
+  min-height: 700px;
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+  flex-direction: column;
+  background: #d7d5d1 url('./fotoz.jpg') top no-repeat;
+}
+
+.viewInput {
+  border: none;
+  border-radius: 5px;
+}

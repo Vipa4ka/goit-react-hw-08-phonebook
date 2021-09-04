@@ -6,7 +6,7 @@ import { Switch, Route } from 'react-router-dom';
 // import ContactList from './components/ContactList';
 // import ContactForm from './components/ContactForm';
 import Container from './components/Container';
-import AppBar from './UserMenu/AppBar';
+import AppBar from './components/AppBar';
 // import { useEffect } from 'react';
 // import { useDispatch } from 'react-redux';
 // import { contactsOperations } from './redux';

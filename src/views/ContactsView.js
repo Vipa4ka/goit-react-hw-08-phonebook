@@ -30,7 +30,7 @@ export default function ContactsView(params) {
       <div style={barStyles}>
         <Filter />
 
-        {isLoadingContacts && <h1>Загружаем...</h1>}
+        {isLoadingContacts && <h1>Loading...</h1>}
       </div>
 
       <ContactList />

@@ -3,16 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { authOperations } from '../redux/auth';
 
-const styles = {
-  form: {
-    width: 320,
-  },
-  label: {
-    display: 'flex',
-    flexDirection: 'column',
-    marginBottom: 15,
-  },
-};
+import styles from './views.module.css';
 
 export default function RegisterView() {
   const dispatch = useDispatch();
@@ -42,18 +33,27 @@ export default function RegisterView() {
   };
 
   return (
-    <div>
-      <h1>Страница регистрации</h1>
-
-      <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
-        <label style={styles.label}>
-          Имя
-          <input type="text" name="name" value={name} onChange={handleChange} />
+    <div className={styles.viewContainer}>
+      <form
+        onSubmit={handleSubmit}
+        className={styles.viewForm}
+        autoComplete="off"
+      >
+        <label className={styles.viewLabel}>
+          Name
+          <input
+            className={styles.viewInput}
+            type="text"
+            name="name"
+            value={name}
+            onChange={handleChange}
+          />
         </label>
 
-        <label style={styles.label}>
-          Почта
+        <label className={styles.viewLabel}>
+          Email
           <input
+            className={styles.viewInput}
             type="email"
             name="email"
             value={email}
@@ -61,9 +61,10 @@ export default function RegisterView() {
           />
         </label>
 
-        <label style={styles.label}>
-          Пароль
+        <label className={styles.viewLabel}>
+          Password
           <input
+            className={styles.viewInput}
             type="password"
             name="password"
             value={password}
@@ -71,7 +72,7 @@ export default function RegisterView() {
           />
         </label>
 
-        <button type="submit">Зарегистрироваться</button>
+        <button type="submit">SIGN UP</button>
       </form>
     </div>
   );
