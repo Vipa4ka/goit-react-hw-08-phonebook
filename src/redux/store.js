@@ -28,6 +28,9 @@ const middleware = [
   }),
   logger,
 ];
+if (process.env.NODE_ENV === `development`) {
+  middleware.push(logger);
+}
 
 const authPersistConfig = {
   key: 'auth',
@@ -38,6 +41,7 @@ const authPersistConfig = {
 export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
+    // auth: authReducer,
     contacts: contactsReducer,
   },
   middleware,

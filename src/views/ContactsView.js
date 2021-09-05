@@ -1,39 +1,41 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Alert from '@material-ui/lab/Alert';
 
 import Container from '../components/Container';
 import ContactList from '../components/ContactList';
+import ContactForm from '../components/ContactForm';
 // import TodoEditor from '../components/TodoEditor';
 import Filter from '../components/Filter';
+import styles from './views.module.css';
 
 // import IconButton from '../components/IconButton';
-// import { ReactComponent as AddIcon } from '../icons/add.svg';
-import { contactsOperations, contactsSelectors } from '../redux/contacts';
 
-const barStyles = {
-  display: 'flex',
-  alignItems: 'flex-end',
-  marginBottom: 20,
-};
+import { contactsOperations, contactsSelectors } from '../redux/contacts';
 
 export default function ContactsView(params) {
   const dispatch = useDispatch();
-  const isLoadingContacts = useSelector(contactsSelectors.getLoading);
+  // const isLoadingContacts = useSelector(contactsSelectors.getLoading);
+  const isLoadingContacts = useSelector(state =>
+    contactsSelectors.getLoading(state),
+  );
 
-  //   const [isModalOpen, setIsModalOpen] = useState(false);
-  //   const toggleModal = () => setIsModalOpen(state => !state);
+  const isError = useSelector(state => contactsSelectors.getError(state));
 
   useEffect(() => dispatch(contactsOperations.fetchContacts()), [dispatch]);
 
   return (
     <Container>
-      <div style={barStyles}>
+      <ContactForm />
+      <div className={styles.ContactsViewBarStyles}>
         <Filter />
 
-        {isLoadingContacts && <h1>Loading...</h1>}
-      </div>
+        <ContactList />
 
-      <ContactList />
+        {isLoadingContacts && <h1>Loading...</h1>}
+
+        {isError && <Alert severity="error">{isError}</Alert>}
+      </div>
     </Container>
   );
 }

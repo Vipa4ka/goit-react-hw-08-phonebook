@@ -2,13 +2,11 @@ import { Switch, Route } from 'react-router-dom';
 
 // import { lazy, Suspense } from "react";
 
-// import Filter from './components/Filter';
-// import ContactList from './components/ContactList';
-// import ContactForm from './components/ContactForm';
 import Container from './components/Container';
 import AppBar from './components/AppBar';
-// import { useEffect } from 'react';
-// import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { authOperations } from './redux/auth';
 // import { contactsOperations } from './redux';
 // import { connect } from 'react-redux';
 import HomeView from './views/HomeView';
@@ -30,8 +28,12 @@ import ContactsView from './views/ContactsView';
 // );
 
 function App() {
-  // const dispatch = useDispatch();
-  // useEffect(() => dispatch(contactsOperations.fetchContacts()), [dispatch]);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(authOperations.fetchCurrentUser());
+  }, [dispatch]);
+
   return (
     <>
       <Container>
@@ -57,14 +59,6 @@ function App() {
         </Switch>
         {/* </Suspense> */}
       </Container>
-
-      {/* <div>
-        <h1>Phonebook</h1>
-        <ContactForm />
-        <h2>Contacts</h2>
-        <Filter />
-        <ContactList />
-      </div> */}
     </>
   );
 }

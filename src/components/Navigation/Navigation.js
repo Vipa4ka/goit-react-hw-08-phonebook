@@ -13,14 +13,14 @@ const Navigation = () => (
       HOME
     </NavLink>
 
-    {/* <NavLink
-      to="/todos"
+    <NavLink
+      to="/contacts"
       exact
-      style={styles.link}
-      activeStyle={styles.activeLink}
+      className={styles.Navigationlink}
+      activeClassName={styles.NavigationActiveLink}
     >
-      Заметки
-    </NavLink> */}
+      CONTACTS
+    </NavLink>
   </nav>
 );
 

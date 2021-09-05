@@ -57,3 +57,16 @@
   border: none;
   border-radius: 5px;
 }
+
+h3 {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 700;
+}
+
+.ContactsViewBarStyles {
+  display: block;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}

@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import styles from './ContactForm.module.scss';
 import { connect } from 'react-redux';
 import { contactsOperations } from '../../redux/contacts';
-
-function ContactForm({ onSubmit }) {
+import { contactsSelectors } from '../../redux/contacts';
+function ContactForm({ contacts, isLoading, onSubmit }) {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
@@ -51,6 +51,7 @@ function ContactForm({ onSubmit }) {
             onChange={handleChange}
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
+            disabled={isLoading}
             required
           />
         </label>
@@ -65,6 +66,7 @@ function ContactForm({ onSubmit }) {
             onChange={handleChange}
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             title="Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
+            disabled={isLoading}
             required
           />
         </label>
@@ -79,9 +81,14 @@ ContactForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
 
+const mapStateToProps = state => ({
+  contacts: contactsSelectors.getAllContacts(state),
+  isLoading: contactsSelectors.getLoading(state),
+});
+
 const mapDispatchToProps = dispatch => ({
   onSubmit: (name, number) =>
     dispatch(contactsOperations.addContacts(name, number)),
 });
 
-export default connect(null, mapDispatchToProps)(ContactForm);
+export default connect(mapStateToProps, mapDispatchToProps)(ContactForm);
