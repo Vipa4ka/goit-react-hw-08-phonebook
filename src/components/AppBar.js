@@ -11,7 +11,6 @@ const styles = {
     alignItems: 'center',
     borderBottom: '1px solid ##424241',
     boxShadow: '0px 6px 9px 0px rgba(0, 0, 0, 0.19)',
-    // backgroundcolor: '0px 6px 9px 0px rgba(0, 0, 0, 0.19)',
   },
 };
 
