@@ -29,15 +29,10 @@ export default function LoginView() {
 
   return (
     <div className={styles.viewContainer}>
-      <form
-        onSubmit={handleSubmit}
-        className={styles.viewForm}
-        autoComplete="off"
-      >
-        <label className={styles.viewLabel}>
+      <form onSubmit={handleSubmit} autoComplete="off">
+        <label>
           Email
           <input
-            className={styles.viewInput}
             type="email"
             name="email"
             value={email}
@@ -45,10 +40,9 @@ export default function LoginView() {
           />
         </label>
 
-        <label className={styles.viewLabel}>
+        <label>
           Password
           <input
-            className={styles.viewInput}
             type="password"
             name="password"
             value={password}

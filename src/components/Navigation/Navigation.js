@@ -17,14 +17,24 @@ const Navigation = () => {
         HOME
       </NavLink>
       {isLoggedIn && (
-        <NavLink
-          to="/contacts"
+        <>
+          <NavLink
+            to="/contacts"
+            exact
+            className={styles.Navigationlink}
+            activeClassName={styles.NavigationActiveLink}
+          >
+            CONTACTS
+          </NavLink>
+          {/* <NavLink
+          to="/upload"
           exact
           className={styles.Navigationlink}
           activeClassName={styles.NavigationActiveLink}
         >
-          CONTACTS
-        </NavLink>
+          DOWNLOAD
+        </NavLink> */}
+        </>
       )}
     </nav>
   );

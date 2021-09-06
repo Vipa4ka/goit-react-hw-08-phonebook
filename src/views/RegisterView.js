@@ -34,26 +34,15 @@ export default function RegisterView() {
 
   return (
     <div className={styles.viewContainer}>
-      <form
-        onSubmit={handleSubmit}
-        className={styles.viewForm}
-        autoComplete="off"
-      >
-        <label className={styles.viewLabel}>
+      <form onSubmit={handleSubmit} autoComplete="off">
+        <label>
           Name
-          <input
-            className={styles.viewInput}
-            type="text"
-            name="name"
-            value={name}
-            onChange={handleChange}
-          />
+          <input type="text" name="name" value={name} onChange={handleChange} />
         </label>
 
-        <label className={styles.viewLabel}>
+        <label>
           Email
           <input
-            className={styles.viewInput}
             type="email"
             name="email"
             value={email}
@@ -61,10 +50,9 @@ export default function RegisterView() {
           />
         </label>
 
-        <label className={styles.viewLabel}>
+        <label>
           Password
           <input
-            className={styles.viewInput}
             type="password"
             name="password"
             value={password}

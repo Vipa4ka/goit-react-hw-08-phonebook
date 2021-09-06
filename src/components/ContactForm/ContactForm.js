@@ -39,11 +39,10 @@ function ContactForm({ contacts, isLoading, onSubmit }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className={styles.container}>
-        <label className={styles.label} htmlFor={uuidv4()}>
+      <div>
+        <label htmlFor={uuidv4()}>
           Name{' '}
           <input
-            className={styles.input}
             type="text"
             name="name"
             value={name}
@@ -55,11 +54,10 @@ function ContactForm({ contacts, isLoading, onSubmit }) {
             required
           />
         </label>
-        <label className={styles.label}>
+        <label>
           Number
           <input
             id={uuidv4()}
-            className={styles.input}
             type="tel"
             name="number"
             value={number}
