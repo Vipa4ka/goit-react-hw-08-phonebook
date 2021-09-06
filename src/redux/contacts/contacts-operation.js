@@ -12,30 +12,6 @@ import {
   deleteContactsError,
 } from './contacts-actions';
 
-// axios.defaults.baseURL = 'https://61226d55d44628001705484b.mockapi.io';
-// axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
-
-// const token = {
-//   set(token) {
-//     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-//   },
-//   unset() {
-//     axios.defaults.headers.common.Authorization = '';
-//   }
-// }
-
-// const fetchContacts =createAsyncThunk('contacts/fetchContacts', async credentials=> {
-//   // dispatch(fetchContactsRequest());
-
-//   try {
-//     const { data } = await axios.get('/contacts');
-//     token.set(data.token);
-//     // dispatch(fetchContactsSuccess(data));
-//   } catch (error) {
-//     // dispatch(fetchContactsError(error));
-//   }
-// });
-
 const fetchContacts = () => async dispatch => {
   dispatch(fetchContactsRequest());
 

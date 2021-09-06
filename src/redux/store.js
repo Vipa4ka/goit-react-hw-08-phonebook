@@ -14,12 +14,6 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-// const contactsPersistConfig = {
-//   key: "contacts",
-//   storage,
-//   blacklist: ["filter"],
-// };
-
 const middleware = [
   ...getDefaultMiddleware({
     serializableCheck: {
@@ -41,7 +35,6 @@ const authPersistConfig = {
 export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
-    // auth: authReducer,
     contacts: contactsReducer,
   },
   middleware,
@@ -49,6 +42,3 @@ export const store = configureStore({
 });
 
 export const persistor = persistStore(store);
-
-// eslint-disable-next-line import/no-anonymous-default-export
-// export default { store, persistor };

@@ -15,16 +15,7 @@ const getVisibleContacts = createSelector(
     );
   },
 );
-// const getVisibleContacts = state => {
-//   const filter = getFilter(state);
-//   const normalizedFilter = filter.toLowerCase();
-//   const allContacts = getAllContacts(state);
-//   return allContacts.filter(({ name }) =>
-//     name.toLowerCase().includes(normalizedFilter),
-//   );
-// };
 
-// eslint-disable-next-line import/no-anonymous-default-export
 const contactsSelectors = {
   getLoading,
   getFilter,
@@ -33,5 +24,4 @@ const contactsSelectors = {
   getVisibleContacts,
 };
 
-// eslint-disable-next-line import/no-anonymous-default-export
 export default contactsSelectors;

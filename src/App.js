@@ -69,9 +69,4 @@ function App() {
   );
 }
 
-// const mapDispatchToProps = dispatch => ({
-//   fetchContacts: () => dispatch(contactsOperations.fetchContacts()),
-// });
-// export default connect(null, mapDispatchToProps)(App);
-
 export default App;

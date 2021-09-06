@@ -61,9 +61,6 @@ const error = createReducer(null, {
 
   [deleteContactsRequest]: () => null,
   [deleteContactsSuccess]: () => null,
-
-  // [fetchContactsError]: (_, { payload }) => payload,
-  // [fetchContactsRequest]: () => null,
 });
 
 export default combineReducers({

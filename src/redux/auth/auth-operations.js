@@ -1,5 +1,4 @@
 import axios from 'axios';
-// import authActions from './auth-actions';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
@@ -36,17 +35,6 @@ const logOut = createAsyncThunk('auth/logout', async () => {
   } catch (error) {}
 });
 
-// const fetchCurrentUser = createAsyncThunk(
-//   'auth/refresh',
-//   async (_, thunkAPI) => {
-//     console.log(thunkAPI.getState());
-//   });
-
-// const fetchCurrentUser = () => async (dispatch, getState) => {
-//   const {
-//     auth: { token: persistedToken },
-//   } = getState();
-
 const fetchCurrentUser = createAsyncThunk(
   'auth/refresh',
   async (_, thunkAPI) => {
@@ -62,9 +50,7 @@ const fetchCurrentUser = createAsyncThunk(
     try {
       const { data } = await axios.get('/users/current');
       return data;
-    } catch (error) {
-      // TODO: Добавить обработку ошибки error.message
-    }
+    } catch (error) {}
   },
 );
 
@@ -75,6 +61,3 @@ const operations = {
   fetchCurrentUser,
 };
 export default operations;
-
-// eslint-disable-next-line import/no-anonymous-default-export
-// export default { register, logIn, logOut, fetchCurrentUser };

@@ -35,13 +35,3 @@
   flex-direction: column;
   background: #d7d5d1 url('./fotoz.jpg') top no-repeat;
 }
-
-/* .ContactsViewBarStyles {
-  min-height: 700px;
-  display: flex;
-  margin-top: 10px;
-  align-items: center;
-  flex-direction: column;
-  background: #d7d5d1 url('./fotoz.jpg') top no-repeat;
-  background-size: 1000px 700px;
-} */

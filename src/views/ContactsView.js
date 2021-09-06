@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Alert from '@material-ui/lab/Alert';
-
 import Container from '../components/Container';
 import ContactList from '../components/ContactList';
 import ContactForm from '../components/ContactForm';
